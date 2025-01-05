@@ -1,1 +1,20 @@
-/* You can add global styles to this file, and also import other style files */
+/* Importáljuk a kívánt fontot a Google Fonts-ról */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+/* Globális stílusok */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #5420bb;
+  color: white;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
