@@ -4,13 +4,17 @@
   <ul id="users">
     @for (user of users; track user.id) {
     <li>
-      <app-user [user]="user" (select)="onSelect($event)" />
+      <app-user
+        [user]="user"
+        [selected]="user.id === selectedUser"
+        (select)="onSelect($event)"
+      />
     </li>
     }
   </ul>
 
   @if (selectedUserDetails){
-  <app-tasks [name]="selectedUserDetails.name" />
+  <app-tasks [userId]="selectedUser" [name]="selectedUserDetails.name" />
   } @else {
   <h1 id="fallback">Válassz ki felhasználót</h1>
   }
