@@ -9,13 +9,10 @@ import { type Task } from './task.model';
 })
 
 export class TaskComponent {
-
   @Input() task!: Task;
   @Output() complete = new EventEmitter<string>();
 
   completeTask = () => {
-
     this.complete.emit(this.task.id);
-  
   }
 }

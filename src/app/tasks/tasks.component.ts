@@ -50,7 +50,10 @@ export class TasksComponent {
   }
 
   createNewTask = () => {
-
     this.newTaskIsVisible = true;
+  }
+
+  cancelTaskCreation = () => {
+    this.newTaskIsVisible = false;
   }
 }
