@@ -1,6 +1,8 @@
+import { type NewTask } from './task/task.model';
 import { Component, Input } from '@angular/core';
 import { TaskComponent } from "./task/task.component";
 import { AddTaskComponent } from "./add-task/add-task.component";
+
 
 @Component({
   selector: 'app-tasks',
@@ -21,7 +23,6 @@ export class TasksComponent {
       dueDate: '2021-12-31',
       name: 'Lakcmíkeresés hiba javítása',
       description: 'JIRA 4410 - Lakcímkeresési hiba javítása',
-      isCompleted: false
     },
     {
       id: "2",
@@ -29,7 +30,6 @@ export class TasksComponent {
       dueDate: '2021-12-31',
       name: 'Örököskeresés hiba javítása',
       description: 'JIRA 4411 - Örököskeresési hiba javítása',
-      isCompleted: false
     },
     {
       id: "3",
@@ -37,7 +37,6 @@ export class TasksComponent {
       dueDate: '2021-12-31',
       name: 'Folyamatdefiníció hiba javítása',
       description: 'JIRA 4412 - Folyamatdefiníció hiba javítása',
-      isCompleted: false
     }
   ];
 
@@ -54,6 +53,17 @@ export class TasksComponent {
   }
 
   cancelTaskCreation = () => {
+    this.newTaskIsVisible = false;
+  }
+
+  addTask = (taskData: NewTask) => {
+    this.tasks.unshift({
+      id: Math.random().toString(),
+      userId: this.userId,
+      dueDate: taskData.date,
+      name: taskData.name,
+      description: taskData.description,
+    });
     this.newTaskIsVisible = false;
   }
 }
