@@ -2,11 +2,12 @@ import { type NewTask } from './task/task.model';
 import { Component, Input } from '@angular/core';
 import { TaskComponent } from "./task/task.component";
 import { AddTaskComponent } from "./add-task/add-task.component";
+import { CardComponent } from "../shared/card/card.component";
 
 
 @Component({
   selector: 'app-tasks',
-  imports: [TaskComponent, AddTaskComponent],
+  imports: [TaskComponent, AddTaskComponent, CardComponent],
   templateUrl: './tasks.component.html',
   styleUrl: './tasks.component.scss'
 })
